@@ -1,4 +1,4 @@
-# EthExplorer (In Progress)
+# LoyyalExplorer (In Progress)
 
 ![EthExplorer Screenshot](http://i.imgur.com/NHFYq0x.png)
 

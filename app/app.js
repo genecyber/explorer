@@ -26,11 +26,12 @@ angular.module('ethExplorer', ['ngRoute','ui.bootstrap'])
             });
     }])
     .run(function($rootScope) {
-        $.ajax({
-            url: "/node"
-         }).done(function(defaultNode) {
+        //$.ajax({
+            //url: "/env?key=LEDGER_NODE"
+            
+         //}).done(function(data) {
             var web3 = new Web3()
-            var eth_node_url = defaultNode.node //'http://169.44.10.21/proxy/master'; // TODO: remote URL
+            var eth_node_url = location.protocol+"//"+location.hostname+"/proxy/master/" 
             web3.setProvider(new web3.providers.HttpProvider(eth_node_url));
             $rootScope.web3 = web3;
             function sleepFor( sleepDuration ){
@@ -42,6 +43,6 @@ angular.module('ethExplorer', ['ngRoute','ui.bootstrap'])
                 $('#connectwarning').modal({keyboard:false,backdrop:'static'}) 
                 $('#connectwarning').modal('show') 
             }
-         });
+         //});
         
     });
